@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Log In | LedgerLock</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@100..900&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0B0D; }
+        ::-webkit-scrollbar-thumb { background: #2D2F34; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3F424A; }
+        
+        body { background-color: #0A0B0D; color: #dbe5d9; }
+        .bg-tier-1 { background-color: #141518; border: 1px solid #2D2F34; }
+        .bg-tier-2 { background-color: #1A1B1F; border: 1px solid #3F424A; box-shadow: 0px 8px 24px rgba(0,0,0,0.5); }
+        .input-glow:focus { border-color: #00e676; outline: none; box-shadow: 0 0 0 1px #00e676; }
+        
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 230, 118, 0.03) 0%, rgba(10, 11, 13, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased font-body-md text-body-md relative overflow-hidden">
+    <!-- Ambient Background Glow -->
+    <div class="ambient-glow"></div>
+    <!-- Main Container -->
+    <main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop z-10">
+        <!-- Login Card -->
+        <div class="w-full max-w-md bg-tier-1 rounded-lg p-md md:p-lg flex flex-col gap-md relative">
+            <!-- Logo Section -->
+            <div class="flex flex-col items-center gap-sm mb-sm cursor-pointer" onclick="window.location.href='/'">
+                <img alt="LedgerLock Logo" class="w-16 h-16 rounded-DEFAULT object-cover" src="/ledgerlock_logo.png"/>
+                <h1 class="font-headline-md text-headline-md text-on-surface">LedgerLock</h1>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">System Access Protocol</p>
+            </div>
+            
+            <!-- Error State (Initially hidden) -->
+            <div id="error-block" class="bg-error-container/20 border border-error/50 rounded-DEFAULT p-sm flex items-start gap-sm hidden">
+                <span class="material-symbols-outlined text-error text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">error</span>
+                <p id="error-message" class="font-body-sm text-body-sm text-error">Invalid email or password. Please verify your credentials and try again.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="loginForm" class="flex flex-col gap-md">
+                <!-- Email Field -->
+                <div class="flex flex-col gap-xs">
+                    <label class="font-label-md text-label-md text-on-surface-variant" for="email">Email Address</label>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">mail</span>
+                        <input class="w-full bg-[#0A0B0D] border border-outline-variant rounded-DEFAULT py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md input-glow transition-colors placeholder-on-surface-variant/50 focus:ring-0 animate-none" id="email" placeholder="operator@domain.com" required type="email"/>
+                    </div>
+                </div>
+                <!-- Password Field -->
+                <div class="flex flex-col gap-xs">
+                    <div class="flex justify-between items-center">
+                        <label class="font-label-md text-label-md text-on-surface-variant" for="password">Passkey</label>
+                    </div>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">lock</span>
+                        <input class="w-full bg-[#0A0B0D] border border-outline-variant rounded-DEFAULT py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md input-glow transition-colors placeholder-on-surface-variant/50 focus:ring-0" id="password" placeholder="Enter passkey" required type="password"/>
+                        <button type="button" id="togglePassword" class="absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors">
+                            <span class="material-symbols-outlined text-[20px]" id="passwordIcon">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <button class="w-full bg-primary-container text-[#0A0B0D] font-label-md text-label-md rounded-DEFAULT py-[12px] px-[16px] flex items-center justify-center gap-xs hover:bg-primary transition-colors mt-xs" type="submit">
+                    Authenticate
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                </button>
+            </form>
+            <!-- Sign Up Link -->
+            <div class="text-center mt-sm border-t border-outline-variant pt-md">
+                <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Don't have an account? <a class="text-primary hover:text-primary-container font-label-md transition-colors ml-xs" href="/signup.html">Sign up</a>
+                </p>
+            </div>
+        </div>
+    </main>
+    <!-- Footer Disclaimer -->
+    <footer class="w-full py-md border-t border-outline-variant flex flex-col items-center justify-center gap-xs px-margin-desktop text-center bg-surface-dim z-0">
+        <p class="font-body-sm text-body-sm text-on-surface-variant">LedgerLock is a demonstration system for educational purposes. No real currency is transacted.</p>
+    </footer>
+
+    <script>
+        // Check if already logged in
+        if (localStorage.getItem('accessToken')) {
+            window.location.href = '/overview.html';
+        }
+
+        // Toggle Password visibility
+        const passwordInput = document.getElementById('password');
+        const togglePasswordButton = document.getElementById('togglePassword');
+        const passwordIcon = document.getElementById('passwordIcon');
+
+        togglePasswordButton.addEventListener('click', () => {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                passwordIcon.textContent = 'visibility';
+            } else {
+                passwordInput.type = 'password';
+                passwordIcon.textContent = 'visibility_off';
+            }
+        });
+
+        // Form Submit
+        const form = document.getElementById('loginForm');
+        const errorBlock = document.getElementById('error-block');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorBlock.classList.add('hidden');
+            
+            const email = document.getElementById('email').value;
+            const password = passwordInput.value;
+
+            const API_BASE = window.ENV?.API_BASE_URL || localStorage.getItem('API_BASE_URL') || '';
+
+            try {
+                const response = await fetch(API_BASE + '/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    localStorage.setItem('accessToken', data.accessToken);
+                    localStorage.setItem('refreshToken', data.refreshToken);
+                    localStorage.setItem('email', data.email);
+                    localStorage.setItem('userId', data.id);
+                    window.location.href = '/overview.html';
+                } else {
+                    const errData = await response.json();
+                    errorMessage.textContent = errData.message || 'Authentication failed. Please verify credentials.';
+                    errorBlock.classList.remove('hidden');
+                }
+            } catch (err) {
+                errorMessage.textContent = 'System connection error. Please try again.';
+                errorBlock.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

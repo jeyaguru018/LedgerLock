@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH
+    username: sa
+    password: sa
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: false # Let Hibernate generate the schema for tests to avoid Flyway Postgres specific SQL syntax issues in H2
+
+jwt:
+  secret: test_secret_test_secret_test_secret_test_secret_test_secret_test_secret
+  access-expiration-ms: 900000
+  refresh-expiration-ms: 604800000

@@ -1,0 +1,2962 @@
+Landing Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - Precision Trust</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0B0D;
+            color: #dbe5d9;
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-tier-1 {
+            background-color: #141518;
+            border: 1px solid #2D2F34;
+        }
+        .bg-tier-2 {
+            background-color: #141518;
+            border: 1px solid #3F424A;
+            box-shadow: 0px 8px 24px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased bg-[#0A0B0D] text-on-surface">
+<!-- Top Disclaimer Banner -->
+<div class="w-full bg-surface-variant text-on-surface-variant py-xs px-margin-mobile md:px-margin-desktop text-center">
+<p class="font-body-sm text-body-sm">LedgerLock is a demonstration system for educational purposes. No real currency is transacted.</p>
+</div>
+<!-- Navigation (Public, Unauthenticated - Minimal) -->
+<nav class="w-full flex justify-between items-center py-md px-margin-mobile md:px-margin-desktop bg-[#0A0B0D] border-b border-outline-variant/30">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">LedgerLock</span>
+</div>
+<div class="hidden md:flex gap-md items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Documentation</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">API Reference</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop py-xl md:py-[120px]">
+<!-- Hero Section -->
+<section class="w-full max-w-5xl flex flex-col items-center text-center gap-lg">
+<div class="w-32 h-32 md:w-48 md:h-48 mb-sm rounded-lg overflow-hidden border border-outline-variant/50 bg-tier-1 p-xs">
+<img alt="LedgerLock Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+</div>
+<h1 class="font-display-lg text-display-lg max-w-4xl text-on-surface">
+                A concurrency-safe ledger engine that guarantees every transaction happens <span class="text-primary-container">exactly once</span>.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                Built for high-stakes financial environments where speed, accuracy, and technical clarity are paramount. LedgerLock provides absolute security and professional-grade performance through rigorous optimistic concurrency control.
+            </p>
+<div class="flex flex-col sm:flex-row gap-md mt-sm">
+<button class="bg-primary-container text-on-primary-fixed font-label-md text-label-md px-[16px] py-[12px] rounded uppercase hover:bg-primary transition-colors">
+                    Sign Up
+                </button>
+<button class="bg-transparent border border-on-surface text-on-surface font-label-md text-label-md px-[16px] py-[12px] rounded uppercase hover:bg-surface-variant transition-colors">
+                    Log In
+                </button>
+</div>
+</section>
+<!-- Feature Highlights (Bento Grid Style) -->
+<section class="w-full max-w-6xl mt-xl md:mt-[120px] grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Card 1 -->
+<div class="bg-tier-1 p-md rounded-lg hover:border-outline transition-colors flex flex-col gap-sm">
+<div class="w-12 h-12 rounded bg-surface-variant flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="lock_clock">lock_clock</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Idempotent by Design</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Safely retry operations without risk of duplication. Our engine ensures that side-effects only occur once, regardless of network instability or concurrent requests.
+                </p>
+</div>
+<!-- Card 2 -->
+<div class="bg-tier-1 p-md rounded-lg hover:border-outline transition-colors flex flex-col gap-sm">
+<div class="w-12 h-12 rounded bg-surface-variant flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="alt_route">alt_route</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Optimistic Concurrency Control</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    High throughput with minimal locking. Version vectors track state changes, rejecting conflicting mutations at the edge before they impact the core ledger.
+                </p>
+</div>
+<!-- Card 3 -->
+<div class="bg-tier-1 p-md rounded-lg hover:border-outline transition-colors flex flex-col gap-sm">
+<div class="w-12 h-12 rounded bg-surface-variant flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="network_check">network_check</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Live Stress-Test Proof</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Access our concurrency test lab to simulate thousands of conflicting transactions in real-time, verifying absolute integrity under load.
+                </p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-dim py-md px-margin-mobile md:px-margin-desktop border-t border-outline-variant flex flex-col items-center justify-center gap-sm mt-xl">
+<div class="flex gap-md font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Regulatory Disclosure</a>
+<a class="hover:text-on-surface transition-colors flex items-center gap-xs" href="#">
+<span class="material-symbols-outlined text-[16px]" data-icon="code">code</span> GitHub
+            </a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm text-center">
+            LedgerLock is a demonstration system for educational purposes. No real currency is transacted.
+        </p>
+</footer>
+</body></html>
+Login Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Log In | LedgerLock</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@100..900&display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar and ambient glows */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0B0D; }
+        ::-webkit-scrollbar-thumb { background: #2D2F34; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3F424A; }
+        
+        body { background-color: #0A0B0D; color: #dbe5d9; }
+        .bg-tier-1 { background-color: #141518; border: 1px solid #2D2F34; }
+        .bg-tier-2 { background-color: #1A1B1F; border: 1px solid #3F424A; box-shadow: 0px 8px 24px rgba(0,0,0,0.5); }
+        .input-glow:focus { border-color: #00e676; outline: none; box-shadow: 0 0 0 1px #00e676; }
+        
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 230, 118, 0.03) 0%, rgba(10, 11, 13, 0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased font-body-md text-body-md relative overflow-hidden">
+<!-- Ambient Background Glow -->
+<div class="ambient-glow"></div>
+<!-- Main Container -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop z-10">
+<!-- Login Card -->
+<div class="w-full max-w-md bg-tier-1 rounded-lg p-md md:p-lg flex flex-col gap-md relative">
+<!-- Logo Section -->
+<div class="flex flex-col items-center gap-sm mb-sm">
+<img alt="LedgerLock Logo" class="w-16 h-16 rounded-DEFAULT object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<h1 class="font-headline-md text-headline-md text-on-surface">LedgerLock</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">System Access Protocol</p>
+</div>
+<!-- Error State (Security Best Practice) -->
+<div class="bg-error-container/20 border border-error/50 rounded-DEFAULT p-sm flex items-start gap-sm">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0" style="font-variation-settings: 'FILL' 1;">error</span>
+<p class="font-body-sm text-body-sm text-error">Invalid email or password. Please verify your credentials and try again.</p>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-md" onsubmit="event.preventDefault();">
+<!-- Email Field -->
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="email">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full bg-[#0A0B0D] border border-outline-variant rounded-DEFAULT py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md input-glow transition-colors placeholder-on-surface-variant/50 focus:ring-0" id="email" placeholder="operator@domain.com" required="" type="email" value="administrator@ledgerlock.com"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-xs">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface-variant" for="password">Passkey</label>
+<a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors" href="#">Forgot password?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">lock</span>
+<input class="w-full bg-[#0A0B0D] border border-outline-variant rounded-DEFAULT py-sm pl-xl pr-sm text-on-surface font-body-md text-body-md input-glow transition-colors placeholder-on-surface-variant/50 focus:ring-0" id="password" placeholder="Enter passkey" required="" type="password" value="********"/>
+<button class="absolute right-sm top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-primary-container text-[#0A0B0D] font-label-md text-label-md rounded-DEFAULT py-[12px] px-[16px] flex items-center justify-center gap-xs hover:bg-primary transition-colors mt-xs" type="submit">
+                    Authenticate
+                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<!-- Sign Up Link -->
+<div class="text-center mt-sm border-t border-outline-variant pt-md">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Don't have an account? <a class="text-primary hover:text-primary-container font-label-md transition-colors ml-xs" href="#">Sign up</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Footer Disclaimer -->
+<footer class="w-full py-md border-t border-outline-variant flex flex-col items-center justify-center gap-xs px-margin-desktop text-center bg-surface-dim z-0">
+<p class="font-body-sm text-body-sm text-on-surface-variant">LedgerLock is a demonstration system for educational purposes. No real currency is transacted.</p>
+</footer>
+</body></html>
+SignUp Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - Sign Up</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0B0D;
+            color: #dbe5d9;
+        }
+        .form-input {
+            background-color: #0A0B0D;
+            border-color: #3b4a3d;
+            color: #dbe5d9;
+        }
+        .form-input:focus {
+            border-color: #00e676;
+            box-shadow: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-margin-mobile md:p-margin-desktop bg-background antialiased">
+<main class="w-full max-w-md">
+<div class="bg-surface-container border border-outline-variant rounded-lg shadow-[0_8px_24px_rgba(0,0,0,0.5)] overflow-hidden">
+<div class="p-lg flex flex-col items-center border-b border-outline-variant">
+<img alt="LedgerLock Logo" class="w-16 h-16 rounded-md mb-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Create Account</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-xs">Precision Trust. Absolute Security.</p>
+</div>
+<div class="p-lg">
+<form action="#" class="space-y-md" method="POST">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-base" for="email">Email Address</label>
+<input class="form-input w-full rounded-DEFAULT border p-sm font-body-md text-body-md focus:ring-0" id="email" name="email" placeholder="user@domain.com" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-base" for="password">Password</label>
+<input class="form-input w-full rounded-DEFAULT border p-sm font-body-md text-body-md focus:ring-0" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+<div class="mt-sm space-y-xs">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Security Level</span>
+<span class="font-label-md text-label-md text-primary" id="pwd-strength-text">Strong</span>
+</div>
+<div class="flex gap-xs h-1 w-full rounded-full overflow-hidden bg-surface">
+<div class="w-1/3 bg-error transition-all duration-300"></div>
+<div class="w-1/3 bg-primary transition-all duration-300"></div>
+<div class="w-1/3 bg-primary transition-all duration-300"></div>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-base" for="confirm-password">Confirm Password</label>
+<input class="form-input w-full rounded-DEFAULT border p-sm font-body-md text-body-md focus:ring-0" id="confirm-password" name="confirm-password" placeholder="••••••••" required="" type="password"/>
+<p class="font-body-sm text-body-sm text-error mt-xs hidden">Passwords do not match.</p>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-headline-sm text-headline-sm py-sm px-md rounded-DEFAULT hover:opacity-90 transition-opacity" type="submit">
+                        Create Account
+                    </button>
+</form>
+</div>
+<div class="bg-surface-dim p-md text-center border-t border-outline-variant">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Already have an account? 
+                    <a class="text-primary hover:underline transition-all" href="#">Log in</a>
+</p>
+</div>
+</div>
+<div class="mt-lg text-center w-full">
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm mx-auto">
+                LedgerLock is a demonstration system for educational purposes. No real currency is transacted.
+            </p>
+</div>
+</main>
+<script>
+        
+        const pwdInput = document.getElementById('password');
+        const strengthText = document.getElementById('pwd-strength-text');
+        const strengthBars = document.querySelectorAll('.flex.gap-xs.h-1 > div');
+
+        pwdInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            let strength = 0;
+            
+            if (val.length > 5) strength++;
+            if (val.length > 8 && /[A-Z]/.test(val) && /[0-9]/.test(val)) strength++;
+            if (val.length > 12 && /[^A-Za-z0-9]/.test(val)) strength++;
+
+            strengthBars.forEach((bar, index) => {
+                bar.className = 'transition-all duration-300 w-1/3 ';
+                if (index < strength) {
+                    if (strength === 1) bar.classList.add('bg-error');
+                    else if (strength === 2) bar.classList.add('bg-secondary');
+                    else bar.classList.add('bg-primary');
+                } else {
+                    bar.classList.add('bg-surface');
+                }
+            });
+
+            if (strength === 0) strengthText.textContent = '';
+            else if (strength === 1) { strengthText.textContent = 'Weak'; strengthText.className = 'font-label-md text-label-md text-error'; }
+            else if (strength === 2) { strengthText.textContent = 'Medium'; strengthText.className = 'font-label-md text-label-md text-secondary'; }
+            else { strengthText.textContent = 'Strong'; strengthText.className = 'font-label-md text-label-md text-primary'; }
+        });
+    </script>
+</body></html>
+OverView Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - Overview Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0B0D; /* Tier 0 Background */
+            color: #dbe5d9; /* on-surface */
+        }
+        .card-tier-1 {
+            background-color: #141518;
+            border: 1px solid #2D2F34;
+        }
+        .card-tier-1:hover {
+            border-color: #3b4a3d; /* outline-variant */
+            background-color: #19221a; /* surface-container */
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen py-md px-sm bg-surface dark:bg-surface border-r border-outline-variant dark:border-outline-variant w-64 fixed left-0 top-0 z-50">
+<div class="flex items-center gap-sm mb-lg px-sm">
+<img alt="LedgerLock Logo" class="w-8 h-8 rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">LedgerLock</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Precision Trust</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-sm py-sm text-primary dark:text-primary font-bold bg-surface-container-high dark:bg-surface-container-high rounded-lg transition-colors hover:bg-surface-container dark:hover:bg-surface-container opacity-80 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container dark:hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="font-label-md text-label-md">My Accounts</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container dark:hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container dark:hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+<span class="font-label-md text-label-md">Concurrency Test Lab</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container dark:hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span class="font-label-md text-label-md">System Audit</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container dark:hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Account Settings</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-xs pt-md border-t border-outline-variant">
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container dark:hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors hover:bg-surface-container dark:hover:bg-surface-container" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<button class="mt-sm py-sm px-md text-on-error bg-error-container hover:bg-error rounded-DEFAULT font-label-md text-label-md w-full text-center transition-colors">
+                Logout
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-margin-desktop h-16 bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline-variant fixed top-0 right-0 w-[calc(100%-256px)] z-40">
+<div class="flex items-center gap-sm">
+<div class="flex items-center gap-xs px-sm py-xs bg-surface-container-high rounded-full border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-primary">System Status: All Balanced</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="pt-24 px-margin-desktop pb-xl flex-1 flex flex-col gap-lg">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface">Overview</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Real-time system metrics and transaction ledger.</p>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Card 1 -->
+<div class="card-tier-1 p-md rounded-lg flex flex-col gap-sm transition-colors">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider">My Total Accounts</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<div class="font-display-lg text-headline-lg text-on-surface tabular-nums">12</div>
+<div class="font-label-md text-label-md text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> Active nodes
+                    </div>
+</div>
+<!-- Card 2 -->
+<div class="card-tier-1 p-md rounded-lg flex flex-col gap-sm transition-colors">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider">My Total Balance</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance">account_balance</span>
+</div>
+<div class="font-display-lg text-headline-lg text-on-surface tabular-nums">$2,459,012.00</div>
+<div class="font-label-md text-label-md text-primary flex items-center gap-xs">
+                        System verified
+                    </div>
+</div>
+<!-- Card 3 -->
+<div class="card-tier-1 p-md rounded-lg flex flex-col gap-sm transition-colors">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider">My Transaction Volume</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="swap_horiz">swap_horiz</span>
+</div>
+<div class="font-display-lg text-headline-lg text-on-surface tabular-nums">8,402</div>
+<div class="font-label-md text-label-md text-on-surface-variant flex items-center gap-xs">
+                        Last 30 days
+                    </div>
+</div>
+<!-- Card 4 -->
+<div class="card-tier-1 p-md rounded-lg flex flex-col gap-sm transition-colors border-l-2 border-l-primary">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Idempotency Blocks Prevented</span>
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="shield">shield</span>
+</div>
+<div class="font-display-lg text-headline-lg text-on-surface tabular-nums">147</div>
+<div class="font-label-md text-label-md text-primary flex items-center gap-xs">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 100% Integrity
+                    </div>
+</div>
+</div>
+<!-- Bento Layout: Ledger & CTA -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-md">
+<!-- Recent Activity Ledger (Takes 2 cols) -->
+<div class="lg:col-span-2 card-tier-1 rounded-lg flex flex-col overflow-hidden">
+<div class="p-md border-b border-[#2D2F34] flex justify-between items-center bg-[#141518]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Activity</h3>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors">View Full Ledger</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-[#1F2023] bg-[#0A0B0D]">
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] uppercase">Tx ID</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] uppercase">Account</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] uppercase">Amount</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] uppercase">Status</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] uppercase">Timestamp</th>
+</tr>
+</thead>
+<tbody class="font-numeric-data text-numeric-data text-on-surface">
+<!-- Row 1 -->
+<tr class="border-b border-[#1F2023] hover:bg-surface-container transition-colors">
+<td class="py-sm px-md">0x7F...3A9B</td>
+<td class="py-sm px-md font-body-sm text-body-sm">Main Operating</td>
+<td class="py-sm px-md text-primary tabular-nums">+$50,000.00</td>
+<td class="py-sm px-md">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-sm bg-primary/10 text-primary font-label-md text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Success
+                                        </span>
+</td>
+<td class="py-sm px-md font-label-md text-label-md text-on-surface-variant tabular-nums">14:02:45 UTC</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-[#1F2023] hover:bg-surface-container transition-colors">
+<td class="py-sm px-md">0x2B...9C11</td>
+<td class="py-sm px-md font-body-sm text-body-sm">Payroll Acc</td>
+<td class="py-sm px-md text-on-surface tabular-nums">-$12,450.00</td>
+<td class="py-sm px-md">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-sm bg-primary/10 text-primary font-label-md text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Success
+                                        </span>
+</td>
+<td class="py-sm px-md font-label-md text-label-md text-on-surface-variant tabular-nums">13:45:10 UTC</td>
+</tr>
+<!-- Row 3 Blocked -->
+<tr class="border-b border-[#1F2023] hover:bg-surface-container transition-colors bg-surface-container-low">
+<td class="py-sm px-md text-on-surface-variant">0x2B...9C11</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface-variant">Payroll Acc</td>
+<td class="py-sm px-md text-on-surface-variant tabular-nums">-$12,450.00</td>
+<td class="py-sm px-md">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-sm border border-outline-variant text-on-surface-variant font-label-md text-[10px] uppercase">
+<span class="material-symbols-outlined text-[12px]">block</span> Blocked-Duplicate
+                                        </span>
+</td>
+<td class="py-sm px-md font-label-md text-label-md text-on-surface-variant tabular-nums">13:45:11 UTC</td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-[#1F2023] hover:bg-surface-container transition-colors">
+<td class="py-sm px-md">0x9F...4D2E</td>
+<td class="py-sm px-md font-body-sm text-body-sm">Vendor Payouts</td>
+<td class="py-sm px-md text-on-surface tabular-nums">-$4,200.00</td>
+<td class="py-sm px-md">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-sm bg-primary/10 text-primary font-label-md text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Success
+                                        </span>
+</td>
+<td class="py-sm px-md font-label-md text-label-md text-on-surface-variant tabular-nums">12:15:00 UTC</td>
+</tr>
+<!-- Row 5 Failed -->
+<tr class="border-b border-[#1F2023] hover:bg-surface-container transition-colors">
+<td class="py-sm px-md">0x1A...8F99</td>
+<td class="py-sm px-md font-body-sm text-body-sm">Reserve Fund</td>
+<td class="py-sm px-md text-on-surface tabular-nums">+$100,000.00</td>
+<td class="py-sm px-md">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-sm bg-error/10 text-error font-label-md text-[10px] uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Failed
+                                        </span>
+</td>
+<td class="py-sm px-md font-label-md text-label-md text-on-surface-variant tabular-nums">10:30:22 UTC</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- CTA Card -->
+<div class="card-tier-1 rounded-lg p-lg flex flex-col items-center justify-center text-center gap-md relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors"></div>
+<span class="material-symbols-outlined text-[48px] text-primary relative z-10" data-icon="science">science</span>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Concurrency Stress Test</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Simulate high-volume simultaneous transactions to verify idempotency logic.</p>
+<button class="bg-primary-container text-[#0A0B0D] px-4 py-3 rounded-DEFAULT font-label-md text-label-md font-bold uppercase tracking-wider hover:bg-primary-fixed transition-colors w-full">
+                            Run Test
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-md border-t border-outline-variant dark:border-outline-variant bg-surface-dim dark:bg-surface-dim flex flex-col items-center justify-center gap-xs px-margin-desktop text-center mt-auto">
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface-variant">LedgerLock is a demonstration system for educational purposes. No real currency is transacted.</p>
+<div class="flex gap-md mt-sm">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Regulatory Disclosure</a>
+</div>
+</footer>
+</main>
+</body></html>
+Transactions Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - Transactions</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0B0D;
+            color: #dbe5d9;
+        }
+        .table-row-hover:hover {
+            background-color: #141518;
+            border-color: #3b4a3d;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #2e372e;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #454747;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased h-screen overflow-hidden flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-full md:w-[calc(100%-256px)] h-16 bg-surface border-b border-outline-variant flex justify-between items-center px-margin-mobile md:px-margin-desktop z-40">
+<div class="flex items-center gap-sm md:hidden">
+<button class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container p-2 rounded-md">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">LedgerLock</span>
+</div>
+<div class="hidden md:flex items-center gap-sm flex-1 max-w-md ml-auto">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-[#141518] border border-outline-variant rounded-md py-2 pl-10 pr-4 text-on-surface placeholder:text-on-surface-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none font-body-sm text-body-sm transition-colors" placeholder="Search transactions, accounts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-xs md:gap-sm ml-4">
+<button class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container p-2 rounded-md relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container p-2 rounded-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</header>
+<div class="flex flex-1 pt-16 h-full">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-full w-64 fixed left-0 top-0 bg-surface border-r border-outline-variant py-md px-sm z-50">
+<div class="flex items-center gap-sm mb-lg px-2">
+<img alt="LedgerLock" class="w-8 h-8 rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">LedgerLock</h1>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Precision Trust</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">dashboard</span>
+<span class="font-body-md text-body-md">Overview</span>
+</a>
+<a class="flex items-center gap-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">account_balance</span>
+<span class="font-body-md text-body-md">My Accounts</span>
+</a>
+<a class="flex items-center gap-sm px-3 py-2 rounded-lg text-primary font-bold bg-surface-container-high opacity-80 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-body-md text-body-md">Transactions</span>
+</a>
+<a class="flex items-center gap-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">science</span>
+<span class="font-body-md text-body-md">Concurrency Test Lab</span>
+</a>
+<a class="flex items-center gap-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">security</span>
+<span class="font-body-md text-body-md">System Audit</span>
+</a>
+<a class="flex items-center gap-sm px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-primary transition-colors">settings</span>
+<span class="font-body-md text-body-md">Account Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-md flex flex-col gap-xs">
+<a class="flex items-center gap-sm px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="font-label-md text-label-md uppercase">Help</span>
+</a>
+<a class="flex items-center gap-sm px-3 py-2 text-on-surface-variant hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">contact_support</span>
+<span class="font-label-md text-label-md uppercase">Support</span>
+</a>
+<button class="flex items-center gap-sm px-3 py-2 mt-sm text-error hover:bg-[#1a0a0a] rounded-lg transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md text-body-md">Logout</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 bg-[#0A0B0D] p-margin-mobile md:p-margin-desktop overflow-y-auto custom-scrollbar flex flex-col gap-md">
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-md mb-2">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Transactions Log</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Immutable record of all ledger movements.</p>
+</div>
+<button class="bg-[#00e676] text-[#0A0B0D] font-label-md text-label-md uppercase px-4 py-3 rounded-md hover:bg-[#62ff96] transition-colors flex items-center gap-2 self-start md:self-auto shadow-[0_0_15px_rgba(0,230,118,0.2)]" onclick="document.getElementById('new-transfer-modal').classList.remove('translate-x-full')">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'wght' 600;">add</span>
+                    New Transfer
+                </button>
+</header>
+<!-- Filters & Controls Bar -->
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg p-sm flex flex-wrap gap-sm items-center">
+<div class="flex-1 min-w-[200px] flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">filter_list</span>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Filters</span>
+</div>
+<div class="flex gap-2 flex-wrap">
+<select class="bg-[#0A0B0D] border border-outline-variant rounded-md py-1.5 px-3 text-on-surface font-body-sm text-body-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none cursor-pointer">
+<option value="7d">Last 7 Days</option>
+<option value="30d">Last 30 Days</option>
+<option value="90d">Last 90 Days</option>
+<option value="all">All Time</option>
+</select>
+<select class="bg-[#0A0B0D] border border-outline-variant rounded-md py-1.5 px-3 text-on-surface font-body-sm text-body-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none cursor-pointer">
+<option value="all">All Statuses</option>
+<option value="settled">Settled</option>
+<option value="pending">Pending</option>
+<option value="failed">Failed</option>
+</select>
+<select class="bg-[#0A0B0D] border border-outline-variant rounded-md py-1.5 px-3 text-on-surface font-body-sm text-body-sm focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none cursor-pointer">
+<option value="all">All Accounts</option>
+<option value="op-usd">OP-USD-Main</option>
+<option value="res-eur">RES-EUR-Vault</option>
+</select>
+</div>
+<button class="bg-transparent border border-outline-variant text-on-surface px-3 py-1.5 rounded-md hover:border-on-surface transition-colors font-label-md text-label-md uppercase flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Export CSV
+                </button>
+</div>
+<!-- Transaction Ledger Table -->
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg overflow-hidden flex-1 flex flex-col min-h-[400px]">
+<div class="overflow-x-auto custom-scrollbar flex-1">
+<table class="w-full text-left border-collapse whitespace-nowrap">
+<thead class="bg-[#0A0B0D] sticky top-0 z-10 border-b border-[#2D2F34]">
+<tr>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider">Transaction ID</th>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider">Timestamp (UTC)</th>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider">From Account</th>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider">To Account</th>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider text-right">Amount</th>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider">Idempotency Key</th>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider text-center">Status</th>
+<th class="py-3 px-4 font-label-md text-label-md text-[#9CA3AF] uppercase tracking-wider"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#1F2023] font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="table-row-hover transition-colors cursor-pointer group">
+<td class="py-3 px-4 text-on-surface-variant group-hover:text-on-surface font-mono text-xs">tx_98A4b2XvQ</td>
+<td class="py-3 px-4 text-on-surface-variant">2023-10-27 14:32:01</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#29332a] flex items-center justify-center text-xs">US</div>
+<span>OP-USD-Main</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#2a313b] flex items-center justify-center text-xs">EU</div>
+<span>VEN-EUR-Ext</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-numeric-data text-numeric-data text-on-surface">12,500.00 <span class="text-on-surface-variant text-xs ml-1">USD</span></td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs truncate max-w-[120px]" title="idk_req_77Bv99xL">idk_req_77Bv...</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-sm bg-[#00210b] text-[#75ff9e] border border-[#005226] font-label-md text-[10px] uppercase tracking-wider">Settled</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="table-row-hover transition-colors cursor-pointer group">
+<td class="py-3 px-4 text-on-surface-variant group-hover:text-on-surface font-mono text-xs">tx_33C1n9MjP</td>
+<td class="py-3 px-4 text-on-surface-variant">2023-10-27 12:15:44</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#29332a] flex items-center justify-center text-xs">US</div>
+<span>OP-USD-Main</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#29332a] flex items-center justify-center text-xs">US</div>
+<span>PAY-USD-Sal</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-numeric-data text-numeric-data text-on-surface">45,000.00 <span class="text-on-surface-variant text-xs ml-1">USD</span></td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs truncate max-w-[120px]" title="idk_req_pay_oct">idk_req_pay_...</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-sm bg-[#00210b] text-[#75ff9e] border border-[#005226] font-label-md text-[10px] uppercase tracking-wider">Settled</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="table-row-hover transition-colors cursor-pointer group">
+<td class="py-3 px-4 text-on-surface-variant group-hover:text-on-surface font-mono text-xs">tx_71X9p4KlM</td>
+<td class="py-3 px-4 text-on-surface-variant">2023-10-27 10:05:12</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#2a313b] flex items-center justify-center text-xs">EU</div>
+<span>RES-EUR-Vault</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#29332a] flex items-center justify-center text-xs">US</div>
+<span>OP-USD-Main</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-numeric-data text-numeric-data text-on-surface">8,250.50 <span class="text-on-surface-variant text-xs ml-1">EUR</span></td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs truncate max-w-[120px]" title="idk_req_fx_swap">idk_req_fx_s...</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-sm bg-[#1a1c1c] text-[#b4b5b5] border border-[#454747] font-label-md text-[10px] uppercase tracking-wider">Pending</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="table-row-hover transition-colors cursor-pointer group">
+<td class="py-3 px-4 text-on-surface-variant group-hover:text-on-surface font-mono text-xs">tx_44F2e1RtW</td>
+<td class="py-3 px-4 text-on-surface-variant">2023-10-26 23:59:59</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#29332a] flex items-center justify-center text-xs">US</div>
+<span>OP-USD-Main</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-[#3b4a3d] flex items-center justify-center text-xs">UK</div>
+<span>EXT-GBP-Vendor</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-numeric-data text-numeric-data text-on-surface">150,000.00 <span class="text-on-surface-variant text-xs ml-1">USD</span></td>
+<td class="py-3 px-4 text-on-surface-variant font-mono text-xs truncate max-w-[120px]" title="idk_req_batch_end">idk_req_batc...</td>
+<td class="py-3 px-4 text-center">
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-sm bg-[#3a0003] text-[#ffb4ab] border border-[#690005] font-label-md text-[10px] uppercase tracking-wider">Failed</span>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="bg-[#0A0B0D] border-t border-[#2D2F34] px-4 py-3 flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 4 of 248 entries</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:bg-[#141518] hover:text-on-surface disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-[#141518] text-primary font-numeric-data text-numeric-data border border-[#2D2F34]">1</button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-[#141518] font-numeric-data text-numeric-data">2</button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-[#141518] font-numeric-data text-numeric-data">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="p-1 rounded text-on-surface-variant hover:bg-[#141518] hover:text-on-surface">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Global Footer inside Canvas -->
+<footer class="mt-auto pt-lg pb-md border-t border-outline-variant flex flex-col items-center justify-center gap-xs text-center w-full bg-[#0A0B0D]">
+<div class="flex gap-4 mb-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#">Regulatory Disclosure</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+                    LedgerLock is a demonstration system for educational purposes. No real currency is transacted.
+                </p>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2 uppercase tracking-widest opacity-50">Precision Trust</p>
+</footer>
+</main>
+</div>
+<!-- Side Panel / Modal: New Transfer -->
+<div class="fixed inset-0 z-[100] flex justify-end transform translate-x-full transition-transform duration-300 ease-in-out" id="new-transfer-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="document.getElementById('new-transfer-modal').classList.add('translate-x-full')"></div>
+<!-- Panel -->
+<div class="relative w-full max-w-md bg-[#0A0B0D] border-l border-[#3F424A] h-full shadow-[-8px_0_24px_rgba(0,0,0,0.5)] flex flex-col">
+<div class="flex items-center justify-between p-md border-b border-[#2D2F34] bg-[#141518]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Initiate Transfer</h3>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="document.getElementById('new-transfer-modal').classList.add('translate-x-full')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-md custom-scrollbar flex flex-col gap-lg">
+<!-- Source & Destination -->
+<div class="flex flex-col gap-4 relative">
+<div class="absolute left-6 top-8 bottom-8 w-px bg-[#2D2F34] z-0"></div>
+<div class="relative z-10 bg-[#141518] p-4 rounded-lg border border-[#2D2F34]">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">From Account</label>
+<select class="w-full bg-[#0A0B0D] border border-[#2D2F34] rounded-md py-2 px-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none">
+<option>OP-USD-Main (Balance: $1,240,500.00)</option>
+<option>RES-EUR-Vault</option>
+</select>
+</div>
+<div class="relative z-10 w-8 h-8 rounded-full bg-[#0A0B0D] border border-[#2D2F34] flex items-center justify-center self-center my-[-16px] text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</div>
+<div class="relative z-10 bg-[#141518] p-4 rounded-lg border border-[#2D2F34]">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">To Account</label>
+<select class="w-full bg-[#0A0B0D] border border-[#2D2F34] rounded-md py-2 px-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none">
+<option>Select destination...</option>
+<option>VEN-EUR-Ext</option>
+<option>PAY-USD-Sal</option>
+</select>
+</div>
+</div>
+<!-- Amount -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase mb-2">Transfer Amount</label>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-numeric-data">$</span>
+<input class="w-full bg-[#141518] border border-[#2D2F34] rounded-md py-3 pl-8 pr-16 text-on-surface font-numeric-data text-lg focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none text-right" placeholder="0.00" type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-label-md">USD</span>
+</div>
+</div>
+<!-- Idempotency Key (Read-only/Auto-generated) -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase">Idempotency Key</label>
+<button class="text-primary hover:text-[#62ff96] text-xs font-label-md uppercase tracking-wider flex items-center gap-1" onclick="document.getElementById('idem-key').value = 'idk_req_' + Math.random().toString(36).substr(2, 9)">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Regen
+                        </button>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm">key</span>
+<input class="w-full bg-[#081009] border border-[#2D2F34] rounded-md py-2 pl-9 pr-3 text-[#859585] font-mono text-xs focus:outline-none cursor-not-allowed" id="idem-key" readonly="" type="text" value="idk_req_99XvM2qL"/>
+</div>
+<p class="text-[10px] text-on-surface-variant mt-1 font-mono">Ensures transaction uniqueness across distributed systems.</p>
+</div>
+</div>
+<div class="p-md border-t border-[#2D2F34] bg-[#141518] flex gap-3">
+<button class="flex-1 bg-transparent border border-outline-variant text-on-surface font-label-md text-label-md uppercase px-4 py-3 rounded-md hover:bg-surface-variant transition-colors" onclick="document.getElementById('new-transfer-modal').classList.add('translate-x-full')">
+                    Cancel
+                </button>
+<button class="flex-1 bg-[#00e676] text-[#0A0B0D] font-label-md text-label-md uppercase px-4 py-3 rounded-md hover:bg-[#62ff96] transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm">send</span>
+                    Execute
+                </button>
+</div>
+</div>
+</div>
+</body></html>
+My accounts Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - My Accounts</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="bg-surface border-r border-outline-variant h-full w-64 fixed left-0 top-0 flex flex-col py-md px-sm z-50">
+<div class="flex items-center gap-sm px-sm mb-lg">
+<img alt="LedgerLock" class="w-8 h-8 rounded-md" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">LedgerLock</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Precision Trust</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-xs">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary font-bold bg-surface-container-high transition-colors group opacity-80 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+<span class="font-label-md text-label-md">My Accounts</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface">receipt_long</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface">science</span>
+<span class="font-label-md text-label-md">Concurrency Test Lab</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface">security</span>
+<span class="font-label-md text-label-md">System Audit</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface">settings</span>
+<span class="font-label-md text-label-md">Account Settings</span>
+</a>
+</div>
+<div class="mt-auto space-y-xs border-t border-outline-variant pt-sm">
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface">help</span>
+<span class="font-label-md text-label-md">Help</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors group" href="#">
+<span class="material-symbols-outlined group-hover:text-on-surface">contact_support</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+<button class="w-full flex justify-center items-center gap-sm px-sm py-sm mt-sm rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container transition-colors border border-outline-variant">
+<span class="font-label-md text-label-md">Logout</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface border-b border-outline-variant fixed top-0 right-0 w-[calc(100%-256px)] h-16 flex justify-between items-center px-margin-desktop z-40">
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">
+                My Accounts
+            </div>
+<div class="flex items-center gap-md">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container border border-outline-variant rounded-lg pl-xl pr-sm py-2 text-on-surface font-body-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-64" placeholder="Search accounts..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 pt-24 px-margin-desktop pb-xl flex gap-gutter overflow-hidden h-screen">
+<!-- Accounts List -->
+<div class="flex-1 flex flex-col h-full bg-surface rounded-xl border border-outline-variant overflow-hidden shadow-lg">
+<div class="p-md border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Active Accounts</h2>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-md py-sm rounded-DEFAULT hover:bg-primary-fixed transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-sm">add</span>
+                        Create New Account
+                    </button>
+</div>
+<div class="flex-1 overflow-y-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant sticky top-0 z-10">
+<tr>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase">Account ID</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase">Name</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase text-right">Current Balance</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase">Version</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase">Last Updated</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Selected Row -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer bg-surface-container-high border-l-2 border-l-primary">
+<td class="py-sm px-md font-numeric-data text-numeric-data text-on-surface">ACC-9923-XZ</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface">Primary Operations</td>
+<td class="py-sm px-md font-numeric-data text-headline-sm text-primary text-right tabular-nums tracking-tight">$1,450,230.00</td>
+<td class="py-sm px-md font-numeric-data text-label-md text-on-surface-variant">v.42</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface-variant">2 mins ago</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors cursor-pointer">
+<td class="py-sm px-md font-numeric-data text-numeric-data text-on-surface">ACC-4410-QW</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface">Reserve Fund Alpha</td>
+<td class="py-sm px-md font-numeric-data text-numeric-data text-on-surface text-right tabular-nums">$850,000.00</td>
+<td class="py-sm px-md font-numeric-data text-label-md text-on-surface-variant">v.18</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface-variant">1 hour ago</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors cursor-pointer">
+<td class="py-sm px-md font-numeric-data text-numeric-data text-on-surface">ACC-1102-LK</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface">Payroll Dispersal</td>
+<td class="py-sm px-md font-numeric-data text-numeric-data text-on-surface text-right tabular-nums">$125,400.50</td>
+<td class="py-sm px-md font-numeric-data text-label-md text-on-surface-variant">v.105</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface-variant">4 hours ago</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors cursor-pointer">
+<td class="py-sm px-md font-numeric-data text-numeric-data text-on-surface">ACC-7754-BN</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface">Vendor Escrow</td>
+<td class="py-sm px-md font-numeric-data text-numeric-data text-on-surface text-right tabular-nums">$45,000.00</td>
+<td class="py-sm px-md font-numeric-data text-label-md text-on-surface-variant">v.3</td>
+<td class="py-sm px-md font-body-sm text-body-sm text-on-surface-variant">1 day ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Detail Drawer (Right Side) -->
+<div class="w-96 bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col overflow-hidden shadow-2xl h-full">
+<div class="p-md border-b border-outline-variant bg-surface-container flex justify-between items-start">
+<div>
+<div class="font-label-md text-label-md text-on-surface-variant mb-xs">ACCOUNT DETAILS</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Primary Operations</h3>
+<div class="font-numeric-data text-body-sm text-on-surface-variant mt-xs">ID: ACC-9923-XZ</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-xs rounded-full hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<div class="p-md border-b border-outline-variant">
+<div class="font-label-md text-label-md text-on-surface-variant mb-xs">CURRENT BALANCE</div>
+<div class="font-headline-lg text-headline-lg text-primary tabular-nums tracking-tight">$1,450,230.00</div>
+<div class="flex gap-sm mt-sm">
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-sm bg-primary/10 text-primary font-label-md text-label-md border border-primary/20">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Active
+                        </span>
+<span class="inline-flex items-center gap-xs px-2 py-1 rounded-sm bg-surface-variant text-on-surface font-label-md text-label-md border border-outline-variant">
+                            Version 42
+                        </span>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-md">
+<div class="font-label-md text-label-md text-on-surface-variant mb-md sticky top-0 bg-surface-container-lowest py-2 z-10">TRANSACTION HISTORY</div>
+<div class="space-y-sm">
+<!-- Credit -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface border border-outline-variant hover:border-outline transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Inbound Wire - Client A</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-xs">Today, 10:42 AM</div>
+</div>
+</div>
+<div class="font-numeric-data text-numeric-data text-primary tabular-nums">+$50,000.00</div>
+</div>
+<!-- Debit -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface border border-outline-variant hover:border-outline transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center text-error border border-error/20">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface font-medium">AWS Infrastructure</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-xs">Today, 09:15 AM</div>
+</div>
+</div>
+<div class="font-numeric-data text-numeric-data text-error tabular-nums">-$12,450.00</div>
+</div>
+<!-- Credit -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface border border-outline-variant hover:border-outline transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Interest Yield</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-xs">Yesterday, 11:59 PM</div>
+</div>
+</div>
+<div class="font-numeric-data text-numeric-data text-primary tabular-nums">+$1,230.50</div>
+</div>
+<!-- Debit -->
+<div class="flex items-center justify-between p-sm rounded-lg bg-surface border border-outline-variant hover:border-outline transition-colors">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center text-error border border-error/20">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Internal Transfer (Reserve)</div>
+<div class="font-label-md text-label-md text-on-surface-variant mt-xs">Yesterday, 02:30 PM</div>
+</div>
+</div>
+<div class="font-numeric-data text-numeric-data text-error tabular-nums">-$100,000.00</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim border-t border-outline-variant w-full py-md flex flex-col items-center justify-center gap-xs px-margin-desktop text-center mt-auto z-40">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+                LedgerLock is a demonstration system for educational purposes. No real currency is transacted.
+            </div>
+<div class="flex gap-md mt-sm">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" href="#">Regulatory Disclosure</a>
+</div>
+</footer>
+</div>
+</body></html>
+Concurrency Test Lab Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - Concurrency Test Lab</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#00e676",
+                      "on-surface-variant": "#bacbb9",
+                      "surface-container-lowest": "#081009",
+                      "on-primary-fixed": "#00210b",
+                      "surface-container-low": "#151e16",
+                      "surface-container-high": "#232c24",
+                      "surface-bright": "#323c33",
+                      "on-error": "#690005",
+                      "surface-variant": "#2e372e",
+                      "surface-container-highest": "#2e372e",
+                      "primary-fixed-dim": "#00e475",
+                      "secondary-fixed": "#e2e2e2",
+                      "tertiary-fixed-dim": "#c0c7d3",
+                      "secondary-container": "#454747",
+                      "surface-tint": "#00e475",
+                      "tertiary": "#dee5f2",
+                      "secondary-fixed-dim": "#c6c6c7",
+                      "primary-fixed": "#62ff96",
+                      "on-primary-container": "#00612e",
+                      "on-background": "#dbe5d9",
+                      "error": "#ffb4ab",
+                      "on-primary-fixed-variant": "#005226",
+                      "inverse-surface": "#dbe5d9",
+                      "outline-variant": "#3b4a3d",
+                      "inverse-primary": "#006d35",
+                      "surface": "#0d150e",
+                      "on-tertiary-fixed": "#151c25",
+                      "on-secondary": "#2f3131",
+                      "outline": "#859585",
+                      "surface-dim": "#0d150e",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-container": "#c2c9d5",
+                      "on-secondary-fixed": "#1a1c1c",
+                      "secondary": "#c6c6c7",
+                      "on-tertiary-container": "#4d545f",
+                      "on-surface": "#dbe5d9",
+                      "tertiary-fixed": "#dce3f0",
+                      "surface-container": "#19221a",
+                      "primary": "#75ff9e",
+                      "on-primary": "#003918",
+                      "error-container": "#93000a",
+                      "background": "#0d150e",
+                      "on-secondary-fixed-variant": "#454747",
+                      "inverse-on-surface": "#29332a",
+                      "on-secondary-container": "#b4b5b5",
+                      "on-tertiary": "#2a313b",
+                      "on-tertiary-fixed-variant": "#404752"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "12px",
+                      "xl": "80px",
+                      "margin-desktop": "40px",
+                      "base": "8px",
+                      "xs": "4px",
+                      "md": "24px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px",
+                      "lg": "48px"
+              },
+              "fontFamily": {
+                      "display-lg": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Sora"
+                      ],
+                      "numeric-data": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Sora"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Sora"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "numeric-data": [
+                              "16px",
+                              {
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #00e676;
+            cursor: pointer;
+            margin-top: -6px; 
+            box-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: #2e372e;
+            border-radius: 2px;
+        }
+        
+        .test-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(.8); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 230, 118, 0); }
+            100% { transform: scale(.8); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+        }
+        
+        .log-entry-enter {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar (from JSON component 0) -->
+<nav class="bg-surface dark:bg-surface text-primary dark:text-primary font-body-md text-body-md h-full w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline-variant flex flex-col py-md px-sm z-50">
+<!-- Header -->
+<div class="mb-lg px-sm">
+<div class="flex items-center gap-sm mb-xs">
+<img alt="User Profile" class="w-8 h-8 rounded-md object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<div class="font-headline-md text-headline-md font-bold tracking-tight text-primary">LedgerLock</div>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">Precision Trust</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-xs flex-1">
+<li>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span>My Accounts</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span>Transactions</span>
+</a>
+</li>
+<li>
+<!-- Active Item -->
+<a class="flex items-center gap-sm px-sm py-sm text-primary dark:text-primary font-bold bg-surface-container-high dark:bg-surface-container-high rounded-lg opacity-80 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="science" style="font-variation-settings: 'FILL' 1;">science</span>
+<span>Concurrency Test Lab</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span>System Audit</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors rounded-lg group" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Account Settings</span>
+</a>
+</li>
+</ul>
+<!-- Footer Links & CTA -->
+<div class="mt-auto flex flex-col gap-sm border-t border-outline-variant pt-md px-sm">
+<ul class="flex flex-col gap-xs mb-sm">
+<li>
+<a class="flex items-center gap-sm py-xs text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="help">help</span>
+<span>Help</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-sm py-xs text-on-surface-variant hover:text-on-surface transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+</li>
+</ul>
+<button class="w-full flex items-center justify-center gap-xs py-sm border border-outline-variant text-on-surface hover:bg-surface-container transition-colors rounded-lg font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+                Logout
+            </button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-1 h-full overflow-y-auto flex flex-col">
+<!-- TopAppBar (from JSON component 1) -->
+<header class="bg-surface dark:bg-surface text-primary dark:text-primary font-body-md text-body-md fixed top-0 right-0 w-[calc(100%-256px)] h-16 border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-margin-desktop z-40">
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface dark:text-on-surface">LedgerLock</div>
+<div class="flex items-center gap-md">
+<!-- Search -->
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="bg-surface-container border border-outline-variant rounded-lg pl-xl pr-sm py-xs text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary-container text-on-surface w-64 transition-all placeholder:text-on-surface-variant" placeholder="Search Ledgers..." type="text"/>
+</div>
+<!-- Actions -->
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<button class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 mt-16 p-margin-desktop bg-[#0A0B0D]">
+<div class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Concurrency Test Lab</h1>
+<p class="text-on-surface-variant max-w-2xl text-body-lg">Execute high-velocity transactional stress tests to verify absolute ledger integrity under extreme concurrent loads.</p>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md">
+<!-- Control Panel (Left Column) -->
+<div class="lg:col-span-4 flex flex-col gap-md">
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg p-md flex flex-col">
+<div class="flex items-center gap-sm mb-md pb-sm border-b border-[#1F2023]">
+<span class="material-symbols-outlined text-primary">tune</span>
+<h2 class="font-headline-sm text-headline-sm">Control Parameters</h2>
+</div>
+<div class="mb-md">
+<label class="block font-label-md text-label-md text-on-surface-variant mb-sm">Target Account</label>
+<select class="w-full bg-[#0A0B0D] border border-[#2D2F34] rounded-md px-sm py-sm text-body-md focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors appearance-none">
+<option>ACC-778-901-X (Main Vault)</option>
+<option>ACC-223-445-Y (Liquidity Pool)</option>
+<option>ACC-001-999-Z (Escrow)</option>
+</select>
+</div>
+<div class="mb-xl">
+<div class="flex justify-between items-center mb-sm">
+<label class="font-label-md text-label-md text-on-surface-variant">Concurrent Requests</label>
+<span class="font-numeric-data text-primary text-body-md font-semibold" id="sliderValue">100</span>
+</div>
+<input class="w-full appearance-none bg-transparent" id="concurrentSlider" max="1000" min="10" type="range" value="100"/>
+<div class="flex justify-between mt-xs text-[10px] text-on-surface-variant">
+<span>10</span>
+<span>1000</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm py-sm px-md rounded-md hover:bg-primary transition-colors flex items-center justify-center gap-sm mt-auto relative overflow-hidden group" id="runTestBtn">
+<div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity"></div>
+<span class="material-symbols-outlined">rocket_launch</span>
+                            Run Concurrency Test
+                        </button>
+</div>
+<!-- Ledger Integrity Card (Expected vs Actual) -->
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg p-md relative overflow-hidden">
+<!-- Glow effect -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="flex items-center justify-between mb-sm">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Integrity Verification</h3>
+<div class="flex items-center gap-xs bg-surface-container px-xs py-[2px] rounded border border-outline-variant">
+<span class="w-2 h-2 rounded-full bg-primary test-pulse inline-block"></span>
+<span class="text-[10px] font-semibold text-primary">LIVE</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-sm mb-md">
+<div class="bg-[#0A0B0D] p-sm rounded border border-[#1F2023]">
+<div class="text-[10px] text-on-surface-variant mb-xs">EXPECTED BALANCE</div>
+<div class="font-numeric-data text-headline-sm text-on-surface">$1,450,200.00</div>
+</div>
+<div class="bg-[#0A0B0D] p-sm rounded border border-[#1F2023]">
+<div class="text-[10px] text-on-surface-variant mb-xs">ACTUAL BALANCE</div>
+<div class="font-numeric-data text-headline-sm text-on-surface" id="actualBalance">$1,450,200.00</div>
+</div>
+</div>
+<div class="bg-[#00210b] border border-[#00612e] rounded p-sm flex items-start gap-sm">
+<span class="material-symbols-outlined text-primary mt-[2px]">check_circle</span>
+<div>
+<div class="font-label-md text-primary font-bold mb-[2px]">MATCH — Ledger Integrity Verified</div>
+<div class="text-[11px] text-on-surface-variant">No race conditions detected during transaction batch processing.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Visualization (Middle & Right Column) -->
+<div class="lg:col-span-8 flex flex-col gap-md">
+<!-- Top row stats -->
+<div class="grid grid-cols-3 gap-md">
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg p-md hover:border-[#3F424A] transition-colors">
+<div class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span class="font-label-md text-label-md">REQUESTS SENT</span>
+</div>
+<div class="font-numeric-data text-display-lg text-on-surface" id="reqSentCounter">0</div>
+</div>
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg p-md hover:border-[#3F424A] transition-colors">
+<div class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+<span class="font-label-md text-label-md">TRANSACTIONS APPLIED</span>
+</div>
+<div class="font-numeric-data text-display-lg text-primary" id="reqAppliedCounter">0</div>
+</div>
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg p-md hover:border-[#3F424A] transition-colors">
+<div class="flex items-center gap-xs text-on-surface-variant mb-sm">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+<span class="font-label-md text-label-md">THROUGHPUT (TPS)</span>
+</div>
+<div class="font-numeric-data text-display-lg text-on-surface" id="tpsCounter">0</div>
+</div>
+</div>
+<!-- Detailed Request Log -->
+<div class="bg-[#141518] border border-[#2D2F34] rounded-lg flex-1 flex flex-col overflow-hidden min-h-[400px]">
+<div class="flex items-center justify-between p-sm border-b border-[#1F2023] bg-[#0A0B0D]">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant">terminal</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Execution Log</h2>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+<!-- Table Header -->
+<div class="grid grid-cols-12 gap-sm px-md py-xs bg-[#0A0B0D] border-b border-[#1F2023] font-label-md text-label-md text-[#9CA3AF]">
+<div class="col-span-2">TIMESTAMP</div>
+<div class="col-span-3">THREAD ID</div>
+<div class="col-span-2">TYPE</div>
+<div class="col-span-3 text-right">AMOUNT</div>
+<div class="col-span-2 text-right">STATUS</div>
+</div>
+<!-- Log Content Area -->
+<div class="flex-1 overflow-y-auto p-xs font-numeric-data text-[13px]" id="logContainer">
+<!-- Initial empty state -->
+<div class="flex flex-col items-center justify-center h-full text-on-surface-variant opacity-50" id="emptyLogState">
+<span class="material-symbols-outlined text-display-lg mb-sm">manage_search</span>
+<p>Awaiting test execution...</p>
+</div>
+<!-- Logs will be injected here by JS -->
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (from JSON component 2) -->
+<footer class="bg-surface-dim dark:bg-surface-dim text-on-surface-variant dark:text-on-surface-variant font-body-sm text-body-sm w-full py-md border-t border-outline-variant dark:border-outline-variant flex flex-col items-center justify-center gap-xs px-margin-desktop text-center mt-auto">
+<p>LedgerLock is a demonstration system for educational purposes. No real currency is transacted.</p>
+<div class="flex gap-md mt-xs font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Regulatory Disclosure</a>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interactions and simulation logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('concurrentSlider');
+            const sliderValDisplay = document.getElementById('sliderValue');
+            const runBtn = document.getElementById('runTestBtn');
+            const sentCounter = document.getElementById('reqSentCounter');
+            const appliedCounter = document.getElementById('reqAppliedCounter');
+            const tpsCounter = document.getElementById('tpsCounter');
+            const logContainer = document.getElementById('logContainer');
+            const emptyState = document.getElementById('emptyLogState');
+            
+            let isRunning = false;
+
+            slider.addEventListener('input', (e) => {
+                sliderValDisplay.textContent = e.target.value;
+            });
+
+            function generateLogEntry(id, isSuccess) {
+                const now = new Date();
+                const timeStr = `${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}:${now.getSeconds().toString().padStart(2,'0')}.${now.getMilliseconds().toString().padStart(3,'0')}`;
+                const threadId = `0x${Math.floor(Math.random()*16777215).toString(16).padStart(6,'0')}`;
+                const amount = (Math.random() * 500).toFixed(2);
+                
+                const entry = document.createElement('div');
+                entry.className = 'grid grid-cols-12 gap-sm px-sm py-xs border-b border-[#1F2023] log-entry-enter hover:bg-[#1A1C20] transition-colors';
+                
+                const statusHtml = isSuccess 
+                    ? `<div class="col-span-2 text-right text-primary flex items-center justify-end gap-xs"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> OK</div>`
+                    : `<div class="col-span-2 text-right text-error flex items-center justify-end gap-xs"><span class="w-1.5 h-1.5 rounded-full bg-error"></span> REJECT</div>`;
+
+                entry.innerHTML = `
+                    <div class="col-span-2 text-on-surface-variant">${timeStr}</div>
+                    <div class="col-span-3 text-[#c0c7d3]">TH-${threadId.toUpperCase()}</div>
+                    <div class="col-span-2 text-on-surface">DEPOSIT</div>
+                    <div class="col-span-3 text-right text-on-surface">+$${amount}</div>
+                    ${statusHtml}
+                `;
+                return entry;
+            }
+
+            runBtn.addEventListener('click', () => {
+                if(isRunning) return;
+                isRunning = true;
+                
+                // Reset UI
+                sentCounter.textContent = '0';
+                appliedCounter.textContent = '0';
+                tpsCounter.textContent = '0';
+                if(emptyState) emptyState.style.display = 'none';
+                logContainer.innerHTML = '';
+                
+                const targetRequests = parseInt(slider.value, 10);
+                let currentReq = 0;
+                let appliedReq = 0;
+                
+                runBtn.innerHTML = `<span class="material-symbols-outlined animate-spin">sync</span> Running...`;
+                runBtn.classList.remove('bg-primary-container', 'text-on-primary-fixed');
+                runBtn.classList.add('bg-surface-variant', 'text-on-surface-variant', 'cursor-not-allowed');
+                
+                const startTime = Date.now();
+
+                const interval = setInterval(() => {
+                    if (currentReq >= targetRequests) {
+                        clearInterval(interval);
+                        isRunning = false;
+                        runBtn.innerHTML = `<span class="material-symbols-outlined">rocket_launch</span> Run Concurrency Test`;
+                        runBtn.classList.add('bg-primary-container', 'text-on-primary-fixed');
+                        runBtn.classList.remove('bg-surface-variant', 'text-on-surface-variant', 'cursor-not-allowed');
+                        return;
+                    }
+
+                    // Batch sizes to simulate concurrency spikes
+                    const batchSize = Math.min(Math.floor(Math.random() * (targetRequests / 10) + 1), targetRequests - currentReq);
+                    
+                    for(let i=0; i<batchSize; i++) {
+                        currentReq++;
+                        // Simulate occasional optimistic locking failures (very rare)
+                        const isSuccess = Math.random() > 0.02; 
+                        if(isSuccess) appliedReq++;
+
+                        // Add log (keep max 50 in DOM for performance)
+                        const logEntry = generateLogEntry(currentReq, isSuccess);
+                        logContainer.prepend(logEntry);
+                        if(logContainer.children.length > 50) {
+                            logContainer.removeChild(logContainer.lastChild);
+                        }
+                    }
+
+                    // Update Counters
+                    sentCounter.textContent = currentReq;
+                    appliedCounter.textContent = appliedReq;
+                    
+                    // TPS calculation
+                    const elapsedSec = (Date.now() - startTime) / 1000;
+                    if(elapsedSec > 0) {
+                        tpsCounter.textContent = Math.floor(currentReq / elapsedSec);
+                    }
+
+                }, 50); // Fast interval for visual effect
+            });
+        });
+    </script>
+</body></html>
+System Audit Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - System Audit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #0A0B0D;
+            color: #dbe5d9;
+        }
+        .card-elevation {
+            background-color: #141518;
+            border: 1px solid #2D2F34;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md flex min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-surface dark:bg-surface h-full w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline-variant flex flex-col py-md px-sm z-50">
+<div class="flex items-center gap-sm px-sm mb-lg">
+<img alt="LedgerLock Logo" class="w-8 h-8 rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">LedgerLock</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Precision Trust</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-xs">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors font-body-md text-body-md flex items-center gap-sm px-sm py-sm rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors font-body-md text-body-md flex items-center gap-sm px-sm py-sm rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+                My Accounts
+            </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors font-body-md text-body-md flex items-center gap-sm px-sm py-sm rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                Transactions
+            </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors font-body-md text-body-md flex items-center gap-sm px-sm py-sm rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+                Concurrency Test Lab
+            </a>
+<a class="text-primary dark:text-primary font-bold bg-surface-container-high dark:bg-surface-container-high rounded-lg font-body-md text-body-md flex items-center gap-sm px-sm py-sm opacity-80 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="security" data-weight="fill" style="font-variation-settings: 'FILL' 1;">security</span>
+                System Audit
+            </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors font-body-md text-body-md flex items-center gap-sm px-sm py-sm rounded-lg opacity-80 hover:opacity-100 transition-opacity duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Account Settings
+            </a>
+</nav>
+<div class="mt-auto flex flex-col gap-xs pt-md border-t border-outline-variant">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors font-body-md text-body-md flex items-center gap-sm px-sm py-sm rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help
+            </a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface hover:bg-surface-container dark:hover:bg-surface-container transition-colors font-body-md text-body-md flex items-center gap-sm px-sm py-sm rounded-lg mb-sm" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<button class="w-full text-on-surface border border-outline-variant rounded-DEFAULT py-xs px-sm font-label-md text-label-md hover:bg-surface-container transition-colors">
+                Logout
+            </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-surface dark:bg-surface fixed top-0 right-0 w-[calc(100%-256px)] h-16 border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-margin-desktop z-40">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface dark:text-on-surface">System Audit</h2>
+<div class="flex items-center gap-md">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="pt-[104px] px-margin-desktop pb-xl flex-1 max-w-7xl mx-auto w-full">
+<!-- Audit Certificate Header -->
+<div class="card-elevation rounded-lg p-lg mb-gutter relative overflow-hidden">
+<div class="absolute top-0 right-0 p-md opacity-10">
+<span class="material-symbols-outlined text-[120px] text-primary" data-icon="verified_user">verified_user</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-md mb-lg border-b border-[#2D2F34] pb-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">Integrity Verification</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">System-wide transactional equilibrium check.</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="bg-primary-container text-on-primary-fixed px-sm py-xs rounded-full font-label-md text-label-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            BALANCED
+                        </span>
+</div>
+</div>
+<!-- Key Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-xs">TOTAL DEBITS</span>
+<span class="font-numeric-data text-[28px] font-semibold text-on-surface">45,920.00 <span class="text-on-surface-variant text-[16px]">LLC</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-xs">TOTAL CREDITS</span>
+<span class="font-numeric-data text-[28px] font-semibold text-on-surface">45,920.00 <span class="text-on-surface-variant text-[16px]">LLC</span></span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-xs">DIFFERENCE</span>
+<span class="font-numeric-data text-[28px] font-semibold text-primary">0.00 <span class="text-on-surface-variant text-[16px]">LLC</span></span>
+</div>
+</div>
+<div class="flex justify-end border-t border-[#2D2F34] pt-md">
+<button class="bg-primary-container text-on-primary-fixed hover:bg-primary transition-colors font-label-md text-label-md px-md py-sm rounded-DEFAULT flex items-center gap-xs">
+<span class="material-symbols-outlined text-[18px]" data-icon="sync">sync</span>
+                        Re-run Audit Now
+                    </button>
+</div>
+</div>
+<!-- Detailed Breakdown Table -->
+<div class="card-elevation rounded-lg overflow-hidden">
+<div class="p-md border-b border-[#2D2F34]">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Ledger Segment Breakdown</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-[#2D2F34] bg-surface-container-low">
+<tr>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF]">SEGMENT ID</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF]">NODE</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] text-right">DEBITS</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] text-right">CREDITS</th>
+<th class="py-sm px-md font-label-md text-label-md text-[#9CA3AF] text-center">STATUS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-[#1F2023] font-numeric-data text-body-sm">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-sm px-md text-on-surface">SEG-001</td>
+<td class="py-sm px-md text-on-surface-variant">Alpha-Primary</td>
+<td class="py-sm px-md text-right text-on-surface">12,450.00</td>
+<td class="py-sm px-md text-right text-on-surface">12,450.00</td>
+<td class="py-sm px-md text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-sm px-md text-on-surface">SEG-002</td>
+<td class="py-sm px-md text-on-surface-variant">Beta-Secondary</td>
+<td class="py-sm px-md text-right text-on-surface">8,920.00</td>
+<td class="py-sm px-md text-right text-on-surface">8,920.00</td>
+<td class="py-sm px-md text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-sm px-md text-on-surface">SEG-003</td>
+<td class="py-sm px-md text-on-surface-variant">Gamma-Tertiary</td>
+<td class="py-sm px-md text-right text-on-surface">24,550.00</td>
+<td class="py-sm px-md text-right text-on-surface">24,550.00</td>
+<td class="py-sm px-md text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span>
+</td>
+</tr>
+</tbody>
+<tfoot class="border-t border-[#2D2F34] bg-surface-container-low font-numeric-data font-semibold">
+<tr>
+<td class="py-sm px-md text-right text-on-surface-variant" colspan="2">SYSTEM TOTAL:</td>
+<td class="py-sm px-md text-right text-on-surface">45,920.00</td>
+<td class="py-sm px-md text-right text-on-surface">45,920.00</td>
+<td class="py-sm px-md"></td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-dim dark:bg-surface-dim w-full py-md border-t border-outline-variant dark:border-outline-variant flex flex-col items-center justify-center gap-xs px-margin-desktop text-center mt-auto z-40">
+<div class="flex gap-md mb-xs">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm" href="#">Regulatory Disclosure</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">LedgerLock is a demonstration system for educational purposes. No real currency is transacted.</p>
+</footer>
+</main>
+</body></html>
+Account Settings Page
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LedgerLock - Account Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#00e676",
+                        "on-surface-variant": "#bacbb9",
+                        "surface-container-lowest": "#081009",
+                        "on-primary-fixed": "#00210b",
+                        "surface-container-low": "#151e16",
+                        "surface-container-high": "#232c24",
+                        "surface-bright": "#323c33",
+                        "on-error": "#690005",
+                        "surface-variant": "#2e372e",
+                        "surface-container-highest": "#2e372e",
+                        "primary-fixed-dim": "#00e475",
+                        "secondary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c0c7d3",
+                        "secondary-container": "#454747",
+                        "surface-tint": "#00e475",
+                        "tertiary": "#dee5f2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary-fixed": "#62ff96",
+                        "on-primary-container": "#00612e",
+                        "on-background": "#dbe5d9",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005226",
+                        "inverse-surface": "#dbe5d9",
+                        "outline-variant": "#3b4a3d",
+                        "inverse-primary": "#006d35",
+                        "surface": "#0d150e",
+                        "on-tertiary-fixed": "#151c25",
+                        "on-secondary": "#2f3131",
+                        "outline": "#859585",
+                        "surface-dim": "#0d150e",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#c2c9d5",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "secondary": "#c6c6c7",
+                        "on-tertiary-container": "#4d545f",
+                        "on-surface": "#dbe5d9",
+                        "tertiary-fixed": "#dce3f0",
+                        "surface-container": "#19221a",
+                        "primary": "#75ff9e",
+                        "on-primary": "#003918",
+                        "error-container": "#93000a",
+                        "background": "#0d150e",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#29332a",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary": "#2a313b",
+                        "on-tertiary-fixed-variant": "#404752"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "margin-desktop": "40px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "numeric-data": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "numeric-data": ["16px", { "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #0A0B0D; color: #dbe5d9; }
+        .card-elevation { background-color: #141518; border: 1px solid #2D2F34; }
+        .card-elevation:hover { border-color: #3b4a3d; }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background text-on-surface antialiased flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="h-full w-64 fixed left-0 top-0 border-r border-outline-variant dark:border-outline-variant bg-surface dark:bg-surface flex flex-col py-md px-sm z-50">
+<!-- Brand -->
+<div class="flex items-center gap-sm mb-lg px-xs">
+<img alt="LedgerLock Logo" class="w-10 h-10 rounded-DEFAULT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfve21nSScKyvKSMBK2vZvvmxCLcg9ym1V4kEkwB9Qh7r0Gnc6J6TapDtQcRjLowPV8vRe8173Bln0QohrDsOq4sx293ok_cxKWRuPtk4Wa347zyABBJifVpF7DbE6f4vY95NApjmyHCI5r6wNPRR3ltPmgBQeOa33RMheXkLwR0UTFLJdA_0HWKf_pDoipONZIWzDF1KTH2sVtnSPrrNWEcBLcZf5uAsbQ4yRNJkb3-JJp5tOlGE5eYo-09VT_vClBOCOGTdzFE"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">LedgerLock</h1>
+<p class="font-label-md text-label-md text-on-surface-variant">Precision Trust</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-xs flex-grow">
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container transition-colors opacity-80 hover:opacity-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Overview
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container transition-colors opacity-80 hover:opacity-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+                    My Accounts
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container transition-colors opacity-80 hover:opacity-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                    Transactions
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container transition-colors opacity-80 hover:opacity-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">science</span>
+                    Concurrency Test Lab
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container transition-colors opacity-80 hover:opacity-100 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">security</span>
+                    System Audit
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-sm rounded-lg text-primary dark:text-primary font-bold bg-surface-container-high dark:bg-surface-container-high transition-colors opacity-80 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+                    Account Settings
+                </a>
+</li>
+</ul>
+<!-- Footer Links & CTA -->
+<div class="mt-auto border-t border-outline-variant pt-md">
+<ul class="flex flex-col gap-xs mb-sm">
+<li>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help</span>
+                        Help
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-sm px-sm py-xs rounded-lg text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container transition-colors font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+                        Support
+                    </a>
+</li>
+</ul>
+<button class="w-full py-[12px] px-[16px] border border-on-surface text-on-surface hover:bg-surface-container transition-colors rounded-DEFAULT font-label-md text-label-md">
+                Logout
+            </button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 flex flex-col h-full overflow-y-auto">
+<!-- TopAppBar -->
+<header class="w-full h-16 border-b border-outline-variant bg-surface flex justify-between items-center px-margin-desktop shrink-0 z-40 sticky top-0">
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface dark:text-on-surface">
+                Account Settings
+            </div>
+<div class="flex items-center gap-sm text-on-surface-variant">
+<button class="hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<div class="flex-1 p-margin-desktop pb-xl max-w-5xl mx-auto w-full flex flex-col gap-lg">
+<section>
+<h2 class="font-headline-lg text-headline-lg mb-sm">Profile Details</h2>
+<div class="card-elevation p-md rounded-lg flex flex-col md:flex-row gap-lg items-start">
+<div class="w-24 h-24 bg-surface-container-high rounded-full border border-outline-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant">person</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md w-full">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Email Address</label>
+<div class="p-sm bg-surface rounded-DEFAULT border border-outline-variant font-numeric-data text-numeric-data">
+                                admin@ledgerlock.demo
+                            </div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Account Created</label>
+<div class="p-sm bg-surface rounded-DEFAULT border border-outline-variant font-numeric-data text-numeric-data">
+                                2023-10-27 14:32:01 UTC
+                            </div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Role Level</label>
+<div class="p-sm bg-surface rounded-DEFAULT border border-outline-variant font-body-md text-body-md">
+                                System Administrator
+                            </div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Status</label>
+<div class="flex items-center h-full">
+<span class="px-sm py-xs bg-primary/10 text-primary font-label-md text-label-md rounded-full border border-primary/20">
+                                    Active / Verified
+                                </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="font-headline-sm text-headline-sm mb-sm text-on-surface">Security &amp; Authentication</h2>
+<div class="card-elevation p-md rounded-lg">
+<form class="flex flex-col gap-md max-w-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="current-pwd">Current Password</label>
+<input class="w-full bg-surface border border-outline-variant rounded-DEFAULT px-sm py-sm font-numeric-data text-numeric-data focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors" id="current-pwd" placeholder="••••••••" type="password"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs" for="new-pwd">New Password</label>
+<input class="w-full bg-surface border border-outline-variant rounded-DEFAULT px-sm py-sm font-numeric-data text-numeric-data focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors" id="new-pwd" placeholder="••••••••" type="password"/>
+<p class="mt-xs font-label-md text-label-md text-on-surface-variant opacity-70">Requires 12+ chars, symbolic entropy.</p>
+</div>
+<div class="pt-sm">
+<button class="bg-primary-container text-[#0A0B0D] px-[16px] py-[12px] font-label-md text-label-md rounded-DEFAULT hover:bg-primary transition-colors" type="button">
+                                Update Credentials
+                            </button>
+</div>
+</form>
+</div>
+</section>
+<section class="grid grid-cols-1 md:grid-cols-2 gap-lg mt-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm mb-sm text-on-surface">System Access</h2>
+<div class="card-elevation p-md rounded-lg border-error/30 hover:border-error/50 transition-colors">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-md">
+                            Terminating your session will require re-authentication via multi-factor to regain access to the control interface.
+                        </p>
+<button class="border border-error text-error px-[16px] py-[12px] font-label-md text-label-md rounded-DEFAULT hover:bg-error/10 transition-colors">
+                            Log Out Current Session
+                        </button>
+</div>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm mb-sm text-on-surface">About This Project</h2>
+<div class="card-elevation p-md rounded-lg h-full flex flex-col justify-between">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-sm">
+                                LedgerLock is an architectural demonstration built to test high-concurrency transaction models and dark-mode UI paradigms.
+                            </p>
+<p class="font-label-md text-label-md text-primary/70 font-numeric-data">
+                                v2.4.0-rc1 / build_8f9a2b
+                            </p>
+</div>
+<div class="mt-md">
+<a class="inline-flex items-center gap-xs text-primary hover:text-primary-container transition-colors font-label-md text-label-md border-b border-primary/30 pb-xs" href="#">
+<span class="material-symbols-outlined text-[16px]">code</span>
+                                View Source on GitHub
+                            </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-md border-t border-outline-variant bg-surface-dim flex flex-col items-center justify-center gap-xs px-margin-desktop text-center mt-auto shrink-0">
+<div class="flex gap-md font-label-md text-label-md text-on-surface-variant mb-xs">
+<a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-surface transition-colors" href="#">Regulatory Disclosure</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant opacity-60">
+                LedgerLock is a demonstration system for educational purposes. No real currency is transacted.
+            </p>
+</footer>
+</main>
+</body></html>

@@ -1,0 +1,11 @@
+target/
+.git/
+.gitignore
+.gemini/
+*.log
+.system_generated/
+Dockerfile
+.dockerignore
+.idea/
+.vscode/
+HELP.md
