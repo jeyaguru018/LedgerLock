@@ -1,4 +1,0 @@
-com\ledgerlock\service\ConcurrencyStressTest.class
-com\ledgerlock\service\TransactionIntegrationTest.class
-com\ledgerlock\service\AuthIntegrationTest.class
-com\ledgerlock\controller\ApiIntegrationTest.class
