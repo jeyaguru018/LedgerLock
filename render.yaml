@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: ledgerlock-api
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DB_HOST
+        fromDatabase:
+          name: ledgerlock-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: ledgerlock-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: ledgerlock-db
+          property: database
+      - key: JDBC_DATABASE_USERNAME
+        fromDatabase:
+          name: ledgerlock-db
+          property: user
+      - key: JDBC_DATABASE_PASSWORD
+        fromDatabase:
+          name: ledgerlock-db
+          property: password
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: APP_CORS_ALLOWED_ORIGINS
+        sync: false
+
+databases:
+  - name: ledgerlock-db
+    databaseName: ledgerlock
+    user: ledgerlock_user
+    plan: free

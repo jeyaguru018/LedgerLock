@@ -1,32 +1,33 @@
 $ErrorActionPreference = "Stop"
 $baseUrl = "http://localhost:8081"
+$corsHeader = @{ Origin = "http://localhost:3000" }
 
 Write-Host "1. Testing Health Endpoint..."
-$health = Invoke-RestMethod -Uri "$baseUrl/actuator/health" -Method Get
+$health = Invoke-RestMethod -Uri "$baseUrl/actuator/health" -Method Get -Headers $corsHeader
 Write-Host "Health: $($health | ConvertTo-Json -Compress)"
 
 Write-Host "`n2. Testing Signup..."
-$signupBody = @{ email = "testsmoke@ledgerlock.com"; password = "Password123!" } | ConvertTo-Json
-$signupRes = Invoke-RestMethod -Uri "$baseUrl/api/auth/signup" -Method Post -Body $signupBody -ContentType "application/json"
+$signupBody = @{ email = "testcors@ledgerlock.com"; password = "Password123!" } | ConvertTo-Json
+$signupRes = Invoke-RestMethod -Uri "$baseUrl/api/auth/signup" -Method Post -Body $signupBody -ContentType "application/json" -Headers $corsHeader
 Write-Host "Signup Success: $($signupRes | ConvertTo-Json -Compress)"
 
 Write-Host "`n3. Testing Login..."
-$loginBody = @{ email = "testsmoke@ledgerlock.com"; password = "Password123!" } | ConvertTo-Json
-$loginRes = Invoke-RestMethod -Uri "$baseUrl/api/auth/login" -Method Post -Body $loginBody -ContentType "application/json"
+$loginBody = @{ email = "testcors@ledgerlock.com"; password = "Password123!" } | ConvertTo-Json
+$loginRes = Invoke-RestMethod -Uri "$baseUrl/api/auth/login" -Method Post -Body $loginBody -ContentType "application/json" -Headers $corsHeader
 $token = $loginRes.accessToken
 Write-Host "Login Success, Token obtained."
 
 Write-Host "`n4. Creating Account 1..."
-$headers = @{ Authorization = "Bearer $token" }
+$headers = @{ Authorization = "Bearer $token"; Origin = "http://localhost:3000" }
 $acc1 = Invoke-RestMethod -Uri "$baseUrl/api/accounts" -Method Post -Headers $headers
 Write-Host "Account 1 Created: $($acc1.accountNumber)"
 
 Write-Host "`n5. Testing Signup for User 2..."
-$signupBody2 = @{ email = "testsmoke2@ledgerlock.com"; password = "Password123!" } | ConvertTo-Json
-$signupRes2 = Invoke-RestMethod -Uri "$baseUrl/api/auth/signup" -Method Post -Body $signupBody2 -ContentType "application/json"
-$loginRes2 = Invoke-RestMethod -Uri "$baseUrl/api/auth/login" -Method Post -Body $signupBody2 -ContentType "application/json"
+$signupBody2 = @{ email = "testcors2@ledgerlock.com"; password = "Password123!" } | ConvertTo-Json
+$signupRes2 = Invoke-RestMethod -Uri "$baseUrl/api/auth/signup" -Method Post -Body $signupBody2 -ContentType "application/json" -Headers $corsHeader
+$loginRes2 = Invoke-RestMethod -Uri "$baseUrl/api/auth/login" -Method Post -Body $signupBody2 -ContentType "application/json" -Headers $corsHeader
 $token2 = $loginRes2.accessToken
-$headers2 = @{ Authorization = "Bearer $token2" }
+$headers2 = @{ Authorization = "Bearer $token2"; Origin = "http://localhost:3000" }
 
 Write-Host "`n6. Creating Account 2..."
 $acc2 = Invoke-RestMethod -Uri "$baseUrl/api/accounts" -Method Post -Headers $headers2

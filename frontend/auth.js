@@ -1,10 +1,10 @@
 // auth.js - Security Interceptor and Token Management
 
 // API Base configuration for split-origin deployments
-// 1. Production: loaded from config.js (window.CONFIG.API_BASE_URL)
+// 1. Production: loaded from config.js (window.ENV.API_BASE_URL)
 // 2. Local Dev: fallback to DEV_API_BASE_URL in localStorage if present
-const API_BASE = (typeof window.CONFIG !== 'undefined' && window.CONFIG.API_BASE_URL)
-    ? window.CONFIG.API_BASE_URL 
+const API_BASE = (typeof window.ENV !== 'undefined' && window.ENV.API_BASE_URL)
+    ? window.ENV.API_BASE_URL 
     : (localStorage.getItem('DEV_API_BASE_URL') || '');
 
 // 1. Immediate unauthenticated route shielding
