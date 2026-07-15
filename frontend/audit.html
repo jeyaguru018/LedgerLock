@@ -170,11 +170,44 @@
         <!-- TopAppBar -->
         <header class="bg-surface dark:bg-surface fixed top-0 right-0 w-[calc(100%-256px)] h-16 border-b border-outline-variant dark:border-outline-variant flex justify-between items-center px-margin-desktop z-40">
             <h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface dark:text-on-surface">System Audit</h2>
-            <div class="flex items-center gap-md">
-                <button class="text-on-surface-variant hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined">notifications</span>
-                </button>
+            
+            <div class="flex items-center gap-md relative">
+                <!-- Notifications Dropdown -->
+                <div class="relative">
+                    <button id="nav-notification-btn" class="text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container rounded-full p-xs relative">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+                        <!-- Bubble is hidden by default -->
+                        <span id="nav-notification-dot" class="hidden absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div id="nav-notification-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-[#141518] border border-outline-variant/30 rounded-md shadow-2xl z-50 overflow-hidden backdrop-blur-xl">
+                        <div class="p-3 border-b border-outline-variant/30 text-on-surface font-headline-sm text-[14px] font-bold">Notifications</div>
+                        <div class="p-4 text-center text-on-surface-variant text-[13px]" id="nav-notification-content">
+                            No new notifications
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Dropdown -->
+                <div class="relative">
+                    <button id="nav-account-btn" class="flex items-center gap-xs text-on-surface-variant hover:text-primary transition-all focus:ring-2 focus:ring-primary-container p-xs rounded-full">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+                        <span class="hidden lg:inline font-body-sm text-body-sm text-on-surface-variant user-email">loading...</span>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div id="nav-account-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-[#141518] border border-outline-variant/30 rounded-md shadow-2xl z-50 overflow-hidden backdrop-blur-xl">
+                        <div class="p-4 border-b border-outline-variant/30">
+                            <p class="text-on-surface font-headline-sm text-[14px] font-bold">Account Summary</p>
+                        </div>
+                        <div class="p-4 text-on-surface-variant text-[13px] flex flex-col gap-2">
+                            <div class="flex justify-between"><span class="text-on-surface-variant/70">Role:</span><span class="text-primary font-bold">Operator</span></div>
+                            <div class="flex justify-between"><span class="text-on-surface-variant/70">Status:</span><span class="text-[#00e676]">Active</span></div>
+                            <div class="flex justify-between"><span class="text-on-surface-variant/70">Access Level:</span><span>Tier 1</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </header>
 
         <!-- Page Content -->

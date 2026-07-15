@@ -112,4 +112,48 @@ document.addEventListener('DOMContentLoaded', () => {
             logout();
         });
     });
+
+    // Initialize Navbar Dropdowns
+    setupNavbarDropdowns();
 });
+
+function setupNavbarDropdowns() {
+    const notifBtn = document.getElementById('nav-notification-btn');
+    const notifDropdown = document.getElementById('nav-notification-dropdown');
+    const accountBtn = document.getElementById('nav-account-btn');
+    const accountDropdown = document.getElementById('nav-account-dropdown');
+
+    if (notifBtn && notifDropdown) {
+        notifBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            notifDropdown.classList.toggle('hidden');
+            if (accountDropdown) accountDropdown.classList.add('hidden');
+        });
+    }
+
+    if (accountBtn && accountDropdown) {
+        accountBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            accountDropdown.classList.toggle('hidden');
+            if (notifDropdown) notifDropdown.classList.add('hidden');
+        });
+    }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        if (notifDropdown && !notifDropdown.classList.contains('hidden')) {
+            notifDropdown.classList.add('hidden');
+        }
+        if (accountDropdown && !accountDropdown.classList.contains('hidden')) {
+            accountDropdown.classList.add('hidden');
+        }
+    });
+
+    // Prevent closing when clicking inside the dropdowns
+    if (notifDropdown) {
+        notifDropdown.addEventListener('click', (e) => e.stopPropagation());
+    }
+    if (accountDropdown) {
+        accountDropdown.addEventListener('click', (e) => e.stopPropagation());
+    }
+}
